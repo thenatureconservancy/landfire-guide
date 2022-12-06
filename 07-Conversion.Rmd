@@ -67,9 +67,6 @@ We can also dive EVEN FURTHER by visualizing these ecosystem changes...
 
 Sometimes patterns emerge more explicitly from visuals. Below is a [Sankey Diagram](https://en.wikipedia.org/wiki/Sankey_diagram) generated in R (which can also be created in Excel we hear. See instructions [here](https://mychartguide.com/how-to-draw-sankey-diagram-in-excel/)). We used the data from our Conversion Table above to create this R figure. On the left are the historical ecosystems, on the right current ecosystems and flow bands. The width of the bands is proportional to the flow rate. 
 
-<!-- RANDY AND STACEY- IT APPEARS THIS LINK GOES TO THE ORIGINAL MI HIGHLANDS SANKEY CHART. DO WE HAVE A NEW URL FOR THIS ONE?  -->
-
-Click [here](https://rswaty.github.io/landfireFSC/Ataya_sankey.html) to the view diagram in your web browser. 
 
 ```{r Atayasankey, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=8}
 
