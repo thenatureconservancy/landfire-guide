@@ -1,0 +1,55 @@
+# Succesion Classes
+
+## What We Will Do
+While looking at the conversion of historical ecosystems is valuable, we can perform more analyses by comparing amounts historical succession classes to current. This gives us a broad measure of the changes in vegetation structure for ecosystems.
+
+## What are "Succession Classes?"
+
+In general LANDFIRE succession classes are stages of development defined in the descriptions of each Biophysical Setting. They are characterized by vegetation height, canopy cover and to some degree species composition. Key takeaways:
+
+* To learn what the succession classes are for each Biophysical Setting, look to the corresponding description on http://landfirereview.org/test/search.php
+* LANDFIRE used state and transition models to estimate the amount of each succession class that would occur with natural (pre-European colonization) disturbance regimes.  Historical succession classes were not mapped as they were assumed to move around over time.
+* The [Succession Class](https://www.landfire.gov/sclass.php) dataset maps the current location of succession classes, agricultural/developed land-use classes, and uncharacteristic vegetation. Uncharacteristic typically represents exotic vegetation, or vegetation structure that would not have occurred historically.
+* By comparing the amounts of historical and current succession classes you can get a sense of which classes are over/under represented. This assumes that the landscape you are assessing is large enough to potentially include the full compliment of succession classes.
+
+## Our Sample Ecosystem 
+
+First, let's take another look at our sClass GIS map for some visual context: 
+
+```{r SclassFigure, echo=FALSE, out.width='1000pt'}
+knitr::include_graphics("KP_GISmaps/Ataya_sclass.png")
+
+```
+
+We see that most of the succession classes in Ataya are in Succession Class B, D, and E. There is also a large amount of area devoted to UE: Uncharacteristic Exotic Vegetation (i.e. invasive species). We see that less area is devoted to UN: Uncharacteristic Native Vegetation (i.e. canopy cover not found historically or plantain forests).
+
+To illustrate the concept of comparing reference to current succession classes, we will focus on the South-Central Interior Mesophytic Forest Biophysical Setting. It is a dominant ecosystem in the Ataya, has been heavily managed (including extensive clear cut logging), and faces many threats such as deer browsing and in isolated pockets hemlock woody adelgid damage.  
+
+## Your Tasks
+We will start with our friend the Pivot Table to get current percentages of the relevant succession classes, then we will look to the Biophysical Settings descriptions to get historical percentages.
+
+### Current Succession Classes
+
+1. Open the "successionClasses" worksheet in our "Ataya_combineClean.xlsx" workbook.
+2. In the Pivot Table Fields box highlight "BPS_MODEL" -> click the down arrow -> select only "South-Central Interior Mesophytic Forest".  Check the box next to "BPS_NAME".
+3. In the Pivot Table Fields check the box next to "LABEL" to get a list of current succession classes.
+4. In the Pivot Table Fields check the box next to "ACRES".
+5. In the Values pane click the down arrow -> select Value Field Settings. Once the Value field settings are open click Show Values As -> select "% of Grand Total" from the dropdown list.
+6. Copy the resultant table -> paste next to the Pivot Table in the same worksheet -> add column names "Succession class" and "Current". 
+
+###  Historical Succession Classes
+
+1. Open the "SouthMesophytic.docx" document that is in the "toDownload" zipped folder. This document is our BpS Model Descriptions for the South-Central Interior Mesophytic Forest Ecosystem. 
+2. Skim through the document to get a sense of the forest ecosystem, paying particular attention to the "Succession Classes" section.
+3. Within the South-Central Interior Mesophytic Forest Ecosystem, there are 5 succession classes, A, B, C, D and E with corresponding estimated reference amounts of percent area. Note that as disturbances moved around historically, a precise acreage amount is not defined in the description. This percent area number may be found just to the right of the class description. For example, Succession Class A was modeled to be rare in this ecosystem as fire was infrequent with the average fire return interval for the ecosystem being 50-200 years. LANDFIRE estimated that only 2% of this ecosystem area (note the "2" next to "Class A") would have been in Succession Class A historically.
+4. We can also see within the document descriptions of the vegetative structure associated with each succession class in this forest type. For example, Succession Class B in this forest type is described as being "Mid-seral closed overstory; stem exclusion phase" among other descriptions. This description indicates younger trees are rapidly growing and crowding one another, and resource competition has drastically increased as a result.
+5. Back in the pivot table, you will create a new column named "Historical", then type the succession class percentages from the document into the corresponding row.  
+
+With the newly created column, we can start to see some patterns emerge. What do you see? Can you draw any conclusions for forest management within the Ataya for this forest ecosystem? 
+
+### Example Interpretation for South-Central Interior Mesophytic Forests
+
+Based on the BpS Model descriptions for this forest ecosystem, we see historically that Succession Class D occupied the greatest land area in the ecosystem at 55%. This Succession Class is marked by late-succession trees, multiple canopy strata, various regeneration of different age and size classes, and infrequent surface fires. The next dominant succession class was Class C at 32% which is described as a closed canopy mixed-mesic forest. Now let's take a look at our current succession classes within South-Central Interior Mesophytic forests. 
+
+We see that currently approximately 0.11% of the South-Central Interior Mesophytic forest is in Succession Class D. Class C represents 10% of the land area, and it now appears that Class B dominates this forest ecosystem at approximately 74% of the land area. Recall that Class B is a mid-seral closed canopy forest that is younger in its age class. The forest structure is marked by many crowded young trees all competing for resources. In our modeling descriptions, this Succession Class is stated to "remain in this self-thinning, closed canopy condition for decades". Given the history of extensive logging within the region, this forest ecosystem could still be recovering from these massive landscape-scale disturbances. In the context of this forest ecosystem's management, perhaps we want to conserve the self-thinning process of the forest. Perhaps if logging is to be employed in this forest ecosystem, only selective thinning treatments should be utilized to facilitate self-thinning. In essence, perhaps this forest ecosystem needs to keep growing and aging rather than experiencing major canopy gap disturbances. 
+
