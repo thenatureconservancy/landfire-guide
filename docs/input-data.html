@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Input Data | LANDFIRE and Certified Sustainable Forest Management</title>
+  <meta name="description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Input Data | LANDFIRE and Certified Sustainable Forest Management" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Input Data | LANDFIRE and Certified Sustainable Forest Management" />
+  
+  <meta name="twitter:description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
+  
+
+<meta name="author" content="Keith Phelps, Stacey Marion, and Randy Swaty" />
+
+
+<meta name="date" content="2022-12-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="our-methods.html"/>
+<link rel="next" href="gis-steps.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/d3-4.5.0/d3.min.js"></script>
+<script src="libs/sankey-1/sankey.js"></script>
+<script src="libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#forest-certification"><i class="fa fa-check"></i><b>1.1</b> Forest Certification</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#landfire"><i class="fa fa-check"></i><b>1.2</b> LANDFIRE</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#gis-tutorial-goals"><i class="fa fa-check"></i><b>1.3</b> GIS Tutorial Goals</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#author-bios"><i class="fa fa-check"></i><b>1.4</b> Author Bios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ataya-intro.html"><a href="ataya-intro.html"><i class="fa fa-check"></i><b>2</b> Ataya Intro</a></li>
+<li class="chapter" data-level="3" data-path="our-methods.html"><a href="our-methods.html"><i class="fa fa-check"></i><b>3</b> Our Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="our-methods.html"><a href="our-methods.html#gis-analysis-requirements"><i class="fa fa-check"></i><b>3.1</b> GIS Analysis Requirements</a></li>
+<li class="chapter" data-level="3.2" data-path="our-methods.html"><a href="our-methods.html#methods"><i class="fa fa-check"></i><b>3.2</b> Methods</a></li>
+<li class="chapter" data-level="3.3" data-path="our-methods.html"><a href="our-methods.html#disclaimers"><i class="fa fa-check"></i><b>3.3</b> Disclaimers</a></li>
+<li class="chapter" data-level="3.4" data-path="our-methods.html"><a href="our-methods.html#lastly-download-this"><i class="fa fa-check"></i><b>3.4</b> Lastly… Download this!</a></li>
+<li class="chapter" data-level="3.5" data-path="our-methods.html"><a href="our-methods.html#about-this-document"><i class="fa fa-check"></i><b>3.5</b> About this document</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="input-data.html"><a href="input-data.html"><i class="fa fa-check"></i><b>4</b> Input Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="input-data.html"><a href="input-data.html#landfire-for-landscape-ecosystem-assessments"><i class="fa fa-check"></i><b>4.1</b> LANDFIRE for Landscape Ecosystem Assessments</a></li>
+<li class="chapter" data-level="4.2" data-path="input-data.html"><a href="input-data.html#landfire-datasets-used-for-this-tutorial"><i class="fa fa-check"></i><b>4.2</b> LANDFIRE Datasets Used For This Tutorial</a></li>
+<li class="chapter" data-level="4.3" data-path="input-data.html"><a href="input-data.html#guidance-on-obtaining-landfire-products"><i class="fa fa-check"></i><b>4.3</b> Guidance on Obtaining LANDFIRE Products</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="gis-steps.html"><a href="gis-steps.html"><i class="fa fa-check"></i><b>5</b> GIS Steps</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="gis-steps.html"><a href="gis-steps.html#if-you-havent-already-download-this"><i class="fa fa-check"></i><b>5.1</b> If you haven’t already… Download this!</a></li>
+<li class="chapter" data-level="5.2" data-path="gis-steps.html"><a href="gis-steps.html#load-spatial-data"><i class="fa fa-check"></i><b>5.2</b> Load Spatial Data</a></li>
+<li class="chapter" data-level="5.3" data-path="gis-steps.html"><a href="gis-steps.html#download-three-3-landfire-rasters-for-the-study-area-bps-evt-and-sclass"><i class="fa fa-check"></i><b>5.3</b> Download Three (3) LANDFIRE Rasters for the Study Area: BpS, EVT, and sClass</a></li>
+<li class="chapter" data-level="5.4" data-path="gis-steps.html"><a href="gis-steps.html#project-to-the-appropriate-coordinate-system"><i class="fa fa-check"></i><b>5.4</b> Project to the Appropriate Coordinate System</a></li>
+<li class="chapter" data-level="5.5" data-path="gis-steps.html"><a href="gis-steps.html#landfire-data-stacking"><i class="fa fa-check"></i><b>5.5</b> LANDFIRE Data Stacking</a></li>
+<li class="chapter" data-level="5.6" data-path="gis-steps.html"><a href="gis-steps.html#join-bps-tabular-data"><i class="fa fa-check"></i><b>5.6</b> Join BpS Tabular Data</a></li>
+<li class="chapter" data-level="5.7" data-path="gis-steps.html"><a href="gis-steps.html#join-evt-tabular-data"><i class="fa fa-check"></i><b>5.7</b> Join EVT Tabular Data</a></li>
+<li class="chapter" data-level="5.8" data-path="gis-steps.html"><a href="gis-steps.html#join-sclass-tabular-data"><i class="fa fa-check"></i><b>5.8</b> Join sClass tabular data</a></li>
+<li class="chapter" data-level="5.9" data-path="gis-steps.html"><a href="gis-steps.html#crop-the-combined-raster-to-the-study-area"><i class="fa fa-check"></i><b>5.9</b> Crop the combined raster to the study area</a></li>
+<li class="chapter" data-level="5.10" data-path="gis-steps.html"><a href="gis-steps.html#calculate-area-field"><i class="fa fa-check"></i><b>5.10</b> Calculate Area Field</a></li>
+<li class="chapter" data-level="5.11" data-path="gis-steps.html"><a href="gis-steps.html#export-combine_studyarea-attribute-table-into-a-.csv-format"><i class="fa fa-check"></i><b>5.11</b> Export combine_studyArea attribute table into a .csv format</a></li>
+<li class="chapter" data-level="5.12" data-path="gis-steps.html"><a href="gis-steps.html#open-the-tutorial-excel-workbook"><i class="fa fa-check"></i><b>5.12</b> Open the Tutorial Excel Workbook</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html"><i class="fa fa-check"></i><b>6</b> Historical Ecosystems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html#general-methods"><i class="fa fa-check"></i><b>6.1</b> General Methods</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html#some-potential-traps-with-pivot-tables"><i class="fa fa-check"></i><b>6.1.1</b> Some Potential Traps with Pivot Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html#getting-at-amounts-of-historical-ecosystems"><i class="fa fa-check"></i><b>6.2</b> Getting at amounts of historical ecosystems</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="evt-data.html"><a href="evt-data.html"><i class="fa fa-check"></i><b>7</b> EVT Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="evt-data.html"><a href="evt-data.html#existing-vegetation-types"><i class="fa fa-check"></i><b>7.1</b> Existing Vegetation Types</a></li>
+<li class="chapter" data-level="7.2" data-path="evt-data.html"><a href="evt-data.html#getting-at-amounts-of-current-ecosystems"><i class="fa fa-check"></i><b>7.2</b> Getting at Amounts of Current Ecosystems</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html"><i class="fa fa-check"></i><b>8</b> Ecosystem Conversion</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#exploring-conversion"><i class="fa fa-check"></i><b>8.1</b> Exploring Conversion</a></li>
+<li class="chapter" data-level="8.2" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#the-fine-print"><i class="fa fa-check"></i><b>8.2</b> The Fine Print</a></li>
+<li class="chapter" data-level="8.3" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#pivot-table-work"><i class="fa fa-check"></i><b>8.3</b> Pivot Table Work</a></li>
+<li class="chapter" data-level="8.4" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#excel-steps-for-preparing-an-ecosystem-conversion-table"><i class="fa fa-check"></i><b>8.4</b> Excel Steps for Preparing an Ecosystem Conversion Table</a></li>
+<li class="chapter" data-level="8.5" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#interpreting-the-ecosystem-conversion-table"><i class="fa fa-check"></i><b>8.5</b> Interpreting the Ecosystem Conversion Table</a></li>
+<li class="chapter" data-level="8.6" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#visual-exploration-with-a-sankey-diagram"><i class="fa fa-check"></i><b>8.6</b> Visual Exploration with a Sankey Diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="succesion-classes.html"><a href="succesion-classes.html"><i class="fa fa-check"></i><b>9</b> Succesion Classes</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="succesion-classes.html"><a href="succesion-classes.html#what-we-will-do"><i class="fa fa-check"></i><b>9.1</b> What We Will Do</a></li>
+<li class="chapter" data-level="9.2" data-path="succesion-classes.html"><a href="succesion-classes.html#what-are-succession-classes"><i class="fa fa-check"></i><b>9.2</b> What are “Succession Classes?”</a></li>
+<li class="chapter" data-level="9.3" data-path="succesion-classes.html"><a href="succesion-classes.html#our-sample-ecosystem"><i class="fa fa-check"></i><b>9.3</b> Our Sample Ecosystem</a></li>
+<li class="chapter" data-level="9.4" data-path="succesion-classes.html"><a href="succesion-classes.html#your-tasks"><i class="fa fa-check"></i><b>9.4</b> Your Tasks</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="succesion-classes.html"><a href="succesion-classes.html#current-succession-classes"><i class="fa fa-check"></i><b>9.4.1</b> Current Succession Classes</a></li>
+<li class="chapter" data-level="9.4.2" data-path="succesion-classes.html"><a href="succesion-classes.html#historical-succession-classes"><i class="fa fa-check"></i><b>9.4.2</b> Historical Succession Classes</a></li>
+<li class="chapter" data-level="9.4.3" data-path="succesion-classes.html"><a href="succesion-classes.html#example-interpretation-for-south-central-interior-mesophytic-forests"><i class="fa fa-check"></i><b>9.4.3</b> Example Interpretation for South-Central Interior Mesophytic Forests</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>10</b> Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusions.html"><a href="conclusions.html#bringing-it-all-together"><i class="fa fa-check"></i><b>10.1</b> Bringing it All Together</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusions.html"><a href="conclusions.html#recap-for-certified-forest-management"><i class="fa fa-check"></i><b>10.2</b> Recap for certified forest management</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>11</b> APPENDIX</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="appendix.html"><a href="appendix.html#landifre-data-downloading-help"><i class="fa fa-check"></i><b>11.1</b> LANDIFRE Data Downloading Help</a></li>
+<li class="chapter" data-level="11.2" data-path="appendix.html"><a href="appendix.html#export-combine_studyarea-attribute-table-into-an-excel-workbook"><i class="fa fa-check"></i><b>11.2</b> Export “combine_studyArea” attribute table into an Excel Workbook</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LANDFIRE and Certified Sustainable Forest Management</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="input-data" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Input Data<a href="input-data.html#input-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="landfire-for-landscape-ecosystem-assessments" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> LANDFIRE for Landscape Ecosystem Assessments<a href="input-data.html#landfire-for-landscape-ecosystem-assessments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To support the assessment of a forest’s conditions, including attributes such as Environmental Impacts of management and identifying and maintaining High Conservation Value Areas, we will consider:</p>
+<ul>
+<li>Change between historical and current ecosystem condition.</li>
+<li>The representation of ecosystems within and outside of your landscape of interest.</li>
+<li>Change in Succession Classes (aka seral states) of communities over time.</li>
+</ul>
+<p>These steps, while foundational and conceptually simple, can be difficult due to a lack of data, especially when the study area of interest is large scale, occurs across multiple land ownerships, or is subject to land cover change. Using LANDFIRE spatial models overcomes this data barrier by providing a suite of terrestrial data appropriate for landscape scale analysis.</p>
+</div>
+<div id="landfire-datasets-used-for-this-tutorial" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> LANDFIRE Datasets Used For This Tutorial<a href="input-data.html#landfire-datasets-used-for-this-tutorial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Spatial datasets, clipped to your area(s) of interest
+<ul>
+<li><a href="https://www.landfire.gov/bps.php">Biophysical Settings (BpS)</a>. This dataset will be used to look at “community habitat”, or where ecosystems could occur based on abiotic factors (e.g., soils, climate and natural disturbance regimes).</li>
+<li><a href="https://www.landfire.gov/sclass.php">Succession classes</a>. This dataset characterizes structural classes on the landscape at the time the dataset represents (e.g., 2016 for LF Version 200).</li>
+<li><a href="https://www.landfire.gov/evt.php">Existing Vegetation Type</a>. This dataset maps NatureServe’s Ecological Systems (see descriptions <a href="https://www.landfire.gov/documents/LANDFIRE_Ecological_Systems_Descriptions_CONUS.pdf">here</a>).</li>
+</ul></li>
+<li>Non-spatial products
+<ul>
+<li><a href="http://landfirereview.org/test/search.php">Biophysical Settings Descriptions</a> These descriptions have information on natural disturbance regimes and succession class descriptions (also available <a href="https://www.landfire.gov/zip/LANDFIRE_CONUS_SClass_Mapping_Rules_9182020.zip">here</a>).<br />
+</li>
+<li><a href="https://www.landfire.gov/zip/LANDFIRE_CONUS_Reference_Condition_Table_August_2020.zip">Reference Condition Table</a> supplements the BpS descriptions with the “reference” percentages for each succession class, for each Biophysical Settings.</li>
+</ul></li>
+</ul>
+</div>
+<div id="guidance-on-obtaining-landfire-products" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Guidance on Obtaining LANDFIRE Products<a href="input-data.html#guidance-on-obtaining-landfire-products" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are multiple ways to get LANDFIRE products depending on whether you are looking to obtain BpS models, their descriptions, or the spatial data:</p>
+<ul>
+<li>For BpS models and descriptions go to: <a href="http://landfirereview.org/search.php" class="uri">http://landfirereview.org/search.php</a>. Start by clicking on the “View map of LANDFIRE Map Zones”. This will help you narrow down your search. Alternatively, you can wait to download BpS descriptions until you do some GIS work and get specific names of BpSs of interest.</li>
+<li>For the spatial datasets you can explore options <a href="https://www.landfire.gov/getdata.php">here</a> which include:
+<ul>
+<li>Downloading <a href="https://www.landfire.gov/version_comparison.php">Full Extent Mosaics</a>. When you do use this option you get large files that cover the entire lower 48, AK or HI (depending on your selection). We use this method when we have several landscapes and/or a large area and no computer storage issues.</li>
+<li>Using the <a href="https://www.landfire.gov/viewer/">LANDFIRE Data Distribution Site</a>. With this method you essentially select the datasets you need then draw a rectangle (or you can select state or counties) around your area of interest to start the downloader. We recommend this if your area of interest is not too large and/or you have a low number of landscapes and/or have storage limits.
+<em>Please note that LANDFIRE has gone through an update as of 2022. As a result, raster files are no longer delivered in ARCGRID formats. All LANDFIRE raster files are now delivered as TIFF with attributes.</em></li>
+</ul></li>
+</ul>
+<p><strong>If you still need more assistance in downloading LANDFIRE products, please see the appendix for some tips and screenshots!</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="our-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gis-steps.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

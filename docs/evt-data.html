@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 EVT Data | LANDFIRE and Certified Sustainable Forest Management</title>
+  <meta name="description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 EVT Data | LANDFIRE and Certified Sustainable Forest Management" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 EVT Data | LANDFIRE and Certified Sustainable Forest Management" />
+  
+  <meta name="twitter:description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
+  
+
+<meta name="author" content="Keith Phelps, Stacey Marion, and Randy Swaty" />
+
+
+<meta name="date" content="2022-12-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="historical-ecosystems.html"/>
+<link rel="next" href="ecosystem-conversion.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/d3-4.5.0/d3.min.js"></script>
+<script src="libs/sankey-1/sankey.js"></script>
+<script src="libs/sankeyNetwork-binding-0.4/sankeyNetwork.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#forest-certification"><i class="fa fa-check"></i><b>1.1</b> Forest Certification</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#landfire"><i class="fa fa-check"></i><b>1.2</b> LANDFIRE</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#gis-tutorial-goals"><i class="fa fa-check"></i><b>1.3</b> GIS Tutorial Goals</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#author-bios"><i class="fa fa-check"></i><b>1.4</b> Author Bios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ataya-intro.html"><a href="ataya-intro.html"><i class="fa fa-check"></i><b>2</b> Ataya Intro</a></li>
+<li class="chapter" data-level="3" data-path="our-methods.html"><a href="our-methods.html"><i class="fa fa-check"></i><b>3</b> Our Methods</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="our-methods.html"><a href="our-methods.html#gis-analysis-requirements"><i class="fa fa-check"></i><b>3.1</b> GIS Analysis Requirements</a></li>
+<li class="chapter" data-level="3.2" data-path="our-methods.html"><a href="our-methods.html#methods"><i class="fa fa-check"></i><b>3.2</b> Methods</a></li>
+<li class="chapter" data-level="3.3" data-path="our-methods.html"><a href="our-methods.html#disclaimers"><i class="fa fa-check"></i><b>3.3</b> Disclaimers</a></li>
+<li class="chapter" data-level="3.4" data-path="our-methods.html"><a href="our-methods.html#lastly-download-this"><i class="fa fa-check"></i><b>3.4</b> Lastly… Download this!</a></li>
+<li class="chapter" data-level="3.5" data-path="our-methods.html"><a href="our-methods.html#about-this-document"><i class="fa fa-check"></i><b>3.5</b> About this document</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="input-data.html"><a href="input-data.html"><i class="fa fa-check"></i><b>4</b> Input Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="input-data.html"><a href="input-data.html#landfire-for-landscape-ecosystem-assessments"><i class="fa fa-check"></i><b>4.1</b> LANDFIRE for Landscape Ecosystem Assessments</a></li>
+<li class="chapter" data-level="4.2" data-path="input-data.html"><a href="input-data.html#landfire-datasets-used-for-this-tutorial"><i class="fa fa-check"></i><b>4.2</b> LANDFIRE Datasets Used For This Tutorial</a></li>
+<li class="chapter" data-level="4.3" data-path="input-data.html"><a href="input-data.html#guidance-on-obtaining-landfire-products"><i class="fa fa-check"></i><b>4.3</b> Guidance on Obtaining LANDFIRE Products</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="gis-steps.html"><a href="gis-steps.html"><i class="fa fa-check"></i><b>5</b> GIS Steps</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="gis-steps.html"><a href="gis-steps.html#if-you-havent-already-download-this"><i class="fa fa-check"></i><b>5.1</b> If you haven’t already… Download this!</a></li>
+<li class="chapter" data-level="5.2" data-path="gis-steps.html"><a href="gis-steps.html#load-spatial-data"><i class="fa fa-check"></i><b>5.2</b> Load Spatial Data</a></li>
+<li class="chapter" data-level="5.3" data-path="gis-steps.html"><a href="gis-steps.html#download-three-3-landfire-rasters-for-the-study-area-bps-evt-and-sclass"><i class="fa fa-check"></i><b>5.3</b> Download Three (3) LANDFIRE Rasters for the Study Area: BpS, EVT, and sClass</a></li>
+<li class="chapter" data-level="5.4" data-path="gis-steps.html"><a href="gis-steps.html#project-to-the-appropriate-coordinate-system"><i class="fa fa-check"></i><b>5.4</b> Project to the Appropriate Coordinate System</a></li>
+<li class="chapter" data-level="5.5" data-path="gis-steps.html"><a href="gis-steps.html#landfire-data-stacking"><i class="fa fa-check"></i><b>5.5</b> LANDFIRE Data Stacking</a></li>
+<li class="chapter" data-level="5.6" data-path="gis-steps.html"><a href="gis-steps.html#join-bps-tabular-data"><i class="fa fa-check"></i><b>5.6</b> Join BpS Tabular Data</a></li>
+<li class="chapter" data-level="5.7" data-path="gis-steps.html"><a href="gis-steps.html#join-evt-tabular-data"><i class="fa fa-check"></i><b>5.7</b> Join EVT Tabular Data</a></li>
+<li class="chapter" data-level="5.8" data-path="gis-steps.html"><a href="gis-steps.html#join-sclass-tabular-data"><i class="fa fa-check"></i><b>5.8</b> Join sClass tabular data</a></li>
+<li class="chapter" data-level="5.9" data-path="gis-steps.html"><a href="gis-steps.html#crop-the-combined-raster-to-the-study-area"><i class="fa fa-check"></i><b>5.9</b> Crop the combined raster to the study area</a></li>
+<li class="chapter" data-level="5.10" data-path="gis-steps.html"><a href="gis-steps.html#calculate-area-field"><i class="fa fa-check"></i><b>5.10</b> Calculate Area Field</a></li>
+<li class="chapter" data-level="5.11" data-path="gis-steps.html"><a href="gis-steps.html#export-combine_studyarea-attribute-table-into-a-.csv-format"><i class="fa fa-check"></i><b>5.11</b> Export combine_studyArea attribute table into a .csv format</a></li>
+<li class="chapter" data-level="5.12" data-path="gis-steps.html"><a href="gis-steps.html#open-the-tutorial-excel-workbook"><i class="fa fa-check"></i><b>5.12</b> Open the Tutorial Excel Workbook</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html"><i class="fa fa-check"></i><b>6</b> Historical Ecosystems</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html#general-methods"><i class="fa fa-check"></i><b>6.1</b> General Methods</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html#some-potential-traps-with-pivot-tables"><i class="fa fa-check"></i><b>6.1.1</b> Some Potential Traps with Pivot Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="historical-ecosystems.html"><a href="historical-ecosystems.html#getting-at-amounts-of-historical-ecosystems"><i class="fa fa-check"></i><b>6.2</b> Getting at amounts of historical ecosystems</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="evt-data.html"><a href="evt-data.html"><i class="fa fa-check"></i><b>7</b> EVT Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="evt-data.html"><a href="evt-data.html#existing-vegetation-types"><i class="fa fa-check"></i><b>7.1</b> Existing Vegetation Types</a></li>
+<li class="chapter" data-level="7.2" data-path="evt-data.html"><a href="evt-data.html#getting-at-amounts-of-current-ecosystems"><i class="fa fa-check"></i><b>7.2</b> Getting at Amounts of Current Ecosystems</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html"><i class="fa fa-check"></i><b>8</b> Ecosystem Conversion</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#exploring-conversion"><i class="fa fa-check"></i><b>8.1</b> Exploring Conversion</a></li>
+<li class="chapter" data-level="8.2" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#the-fine-print"><i class="fa fa-check"></i><b>8.2</b> The Fine Print</a></li>
+<li class="chapter" data-level="8.3" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#pivot-table-work"><i class="fa fa-check"></i><b>8.3</b> Pivot Table Work</a></li>
+<li class="chapter" data-level="8.4" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#excel-steps-for-preparing-an-ecosystem-conversion-table"><i class="fa fa-check"></i><b>8.4</b> Excel Steps for Preparing an Ecosystem Conversion Table</a></li>
+<li class="chapter" data-level="8.5" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#interpreting-the-ecosystem-conversion-table"><i class="fa fa-check"></i><b>8.5</b> Interpreting the Ecosystem Conversion Table</a></li>
+<li class="chapter" data-level="8.6" data-path="ecosystem-conversion.html"><a href="ecosystem-conversion.html#visual-exploration-with-a-sankey-diagram"><i class="fa fa-check"></i><b>8.6</b> Visual Exploration with a Sankey Diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="succesion-classes.html"><a href="succesion-classes.html"><i class="fa fa-check"></i><b>9</b> Succesion Classes</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="succesion-classes.html"><a href="succesion-classes.html#what-we-will-do"><i class="fa fa-check"></i><b>9.1</b> What We Will Do</a></li>
+<li class="chapter" data-level="9.2" data-path="succesion-classes.html"><a href="succesion-classes.html#what-are-succession-classes"><i class="fa fa-check"></i><b>9.2</b> What are “Succession Classes?”</a></li>
+<li class="chapter" data-level="9.3" data-path="succesion-classes.html"><a href="succesion-classes.html#our-sample-ecosystem"><i class="fa fa-check"></i><b>9.3</b> Our Sample Ecosystem</a></li>
+<li class="chapter" data-level="9.4" data-path="succesion-classes.html"><a href="succesion-classes.html#your-tasks"><i class="fa fa-check"></i><b>9.4</b> Your Tasks</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="succesion-classes.html"><a href="succesion-classes.html#current-succession-classes"><i class="fa fa-check"></i><b>9.4.1</b> Current Succession Classes</a></li>
+<li class="chapter" data-level="9.4.2" data-path="succesion-classes.html"><a href="succesion-classes.html#historical-succession-classes"><i class="fa fa-check"></i><b>9.4.2</b> Historical Succession Classes</a></li>
+<li class="chapter" data-level="9.4.3" data-path="succesion-classes.html"><a href="succesion-classes.html#example-interpretation-for-south-central-interior-mesophytic-forests"><i class="fa fa-check"></i><b>9.4.3</b> Example Interpretation for South-Central Interior Mesophytic Forests</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>10</b> Conclusions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="conclusions.html"><a href="conclusions.html#bringing-it-all-together"><i class="fa fa-check"></i><b>10.1</b> Bringing it All Together</a></li>
+<li class="chapter" data-level="10.2" data-path="conclusions.html"><a href="conclusions.html#recap-for-certified-forest-management"><i class="fa fa-check"></i><b>10.2</b> Recap for certified forest management</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>11</b> APPENDIX</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="appendix.html"><a href="appendix.html#landifre-data-downloading-help"><i class="fa fa-check"></i><b>11.1</b> LANDIFRE Data Downloading Help</a></li>
+<li class="chapter" data-level="11.2" data-path="appendix.html"><a href="appendix.html#export-combine_studyarea-attribute-table-into-an-excel-workbook"><i class="fa fa-check"></i><b>11.2</b> Export “combine_studyArea” attribute table into an Excel Workbook</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LANDFIRE and Certified Sustainable Forest Management</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="evt-data" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> EVT Data<a href="evt-data.html#evt-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="existing-vegetation-types" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Existing Vegetation Types<a href="evt-data.html#existing-vegetation-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While looking at the historical ecosystems gives context, we also need to get a picture of which ecosystems are on the landscape today. Like the last section, let’s first take a look at our EVT GIS Map generated using <a href="https://www.landfire.gov/evt.php">LANDFIRE’s Existing Vegetation Type (EVT)</a> data:</p>
+<p><br></p>
+<!-- removed quotation mark and added a vertical space -->
+<p><img src="KP_GISmaps/Ataya_evt.png" width="1000pt" /></p>
+<p><br></p>
+<p>As we can see, there are FAR more ecosystem types present in Ataya today. In the map we see that there is far more Allegheny Dry Oak Forest/Woodland, Northern and Central Native Ruderal Forest, and recently logged cover. This map is certainty different from our Bps map! Let’s move on…</p>
+</div>
+<div id="getting-at-amounts-of-current-ecosystems" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Getting at Amounts of Current Ecosystems<a href="evt-data.html#getting-at-amounts-of-current-ecosystems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We use the same general methods as we did on the “Historical Ecosystems” page, as we will be using another Pivot Table.</p>
+<p><br></p>
+<!-- KEITH INSERT SCREENSHOT AFTER #S 2, FIRST BULLET OF 3 (?) AND 4 (?).   -->
+<!-- KEITH THERE ARE SOME REFERENCES TO 'BPS' BELOW-CHANGE TO 'EVT' -->
+<p><strong>Start by opening the “current” tab in the Excel workbook.</strong></p>
+<ol style="list-style-type: decimal">
+<li>In the Pivot Table Fields pane, select “EVT_NAME” then “ACRES”. Make sure that EVT_NAME is in the “Rows” pane, and that “Sum of ACRES” is in the “Values” pane.<br />
+</li>
+<li>Right click in the top cell of the “Sum of ACRES” column (not the column header) in the Pivot Table, then “Sort Largest to Smallest”.</li>
+</ol>
+<p><img src="Excel_screenshots/EVT_first.png" width="750pt" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>In our example we have some EVTs that have low ACRES values. We can do a little formatting/cleaning before making a chart:
+<ul>
+<li>To remove EVTs from the table you will click the drop-down menu to the right of “EVT_NAME” in the Pivot Table Fields pane. You can now uncheck EVTs as appropriate.</li>
+</ul></li>
+</ol>
+<p><img src="Excel_screenshots/EVT_second.png" width="750pt" /></p>
+<p>It is also possible to filter by right clicking on the top value in the list of EVTs within the Pivot Table, then selecting Filter &gt; Top 10…. Once in that menu you can refine the filtering.
+* Additionally, we would like to add commas and remove decimal places. To do this right click the row that contains “Sum of ACRES” in the spreadsheet (likely row “B”), select “Format Cells” &gt; Number &gt; set Decimal places to “0” then check the “Use 1000 Separator box.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>To get percentages, drag “ACRES” from the top Pivot Table Field pane to the “Values” pane. This will add a second “ACRES” column to the table. Right click to open up the drop down in the second instance of “ACRES” (reads “SUM of ACRES2” in our example), then navigate to Value Field Settings. In this menu select the “Show Values As” tab, click the “Show Values As” drop down then select “% of Grand Total% to get percentages of each EVT (make sure that”EVT_NAME” is selected as the “Base field”).</li>
+</ol>
+<p><img src="Excel_screenshots/EVT_third.png" width="750pt" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>To get a “running total” of percentages you will add a third instance of “ACRES” to the “Values” pane, then Value Field Settings. In this menu select the “Show Values As” tab, click the “Show Values As” drop down then select “% Running Total In” to get running totals of percentages of each EVT (make sure that “EVT_NAME” is selected as the “Base field”).</li>
+<li>Save!</li>
+</ol>
+<p><strong>Example output</strong></p>
+<p>Below is essentially the output from our Pivot Table work with a couple changes:</p>
+<ul>
+<li>Names have been shortened for ease of reading</li>
+<li>Numbers have been rounded</li>
+<li>We have only included a selection of (5) EVTs</li>
+</ul>
+<div id="htmlwidget-b4b9a23daf56636d25a3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b4b9a23daf56636d25a3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Allegheny-Cumberland Dry Oak Forest and Woodland","Southern Appalachian Oak Forest","South-Central Interior Mesophytic Forest","Northern &amp; Central Native Ruderal Forest","Southern and Central Appalachian Cove Forest","Recently Logged-Tree Cover"],[32592.94532,23975.4024,14295.26097,13472.40311,2696.749079,2658.719726],[32.38,23.82,14.2,13.38,2.68,2.64],[32.38,56.2,70.4,83.79,86.47,89.11]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>EVT<\/th>\n      <th>ACRES<\/th>\n      <th>PERCENT<\/th>\n      <th>RUNNING_PERCENT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"pageLength":5,"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render"],"jsHooks":[]}</script>
+<p><br>
+<br></p>
+<p>We see that first there are many EVT’s. This is partially due to the addition of Developed and other “modern” categories such as “Recently Logged-Tree Cover”. Second we see that of the “natural” types there are some important changes from historic ecosystem conditions. In Ataya, there is currently far more acreage associated with Allegheny Dry Oak Forest/Woodland. We can visually confirm this and other patterns with a quick chart made in R (similar charts available in Excel by highlighting the data, clicking Insert then selecting the chart type in the “Charts” tab):</p>
+<p><br></p>
+<p><img src="_main_files/figure-html/evtChart-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="historical-ecosystems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ecosystem-conversion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
