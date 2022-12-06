@@ -9,6 +9,8 @@ biblio-style: apalike
 link-citations: yes
 description: "This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits"
 always_allow_html: true 
+
+output_dir: "docs"
 ---
 
 # Overview {#Introduction}
