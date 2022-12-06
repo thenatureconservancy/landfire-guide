@@ -39,7 +39,7 @@ We are always looking for ways to improve our GIS analysis steps, accessibility 
 
 
 ## Lastly... Download this!
-To work through this guide you will need to download this [zipped folder](https://github.com/rswaty/landfireFSC/blob/main/toDownload.zip) by clicking the hyperlinked text, then the "Download" button that will be on the right side of the screen.  This folder contains:
+To work through this guide you will need to download this [zipped folder](https://github.com/thenatureconservancy/landfire-guide/raw/main/toDownload.zip) by clicking the hyperlinked text, then the "Download" button that will be on the right side of the screen.  This folder contains:
 
 * An Ataya shapefile
 * An Excel file

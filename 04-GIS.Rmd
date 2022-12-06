@@ -2,7 +2,7 @@
 
 ## If you haven’t already... Download this!
 
-Download this [zipped folder] (https://github.com/rswaty/landfireFSC/blob/main/toDownload.zip) by clicking the hyperlinked text, then the "Download" button that will be on the right side of the screen.  This folder contains:
+Download this [zipped folder] (https://github.com/thenatureconservancy/landfire-guide/raw/main/toDownload.zip) by clicking the hyperlinked text, then the "Download" button that will be on the right side of the screen.  This folder contains:
 
 * An Ataya shapefile
 * Folders containing the BpS, EVT, and Sclass rasters 
