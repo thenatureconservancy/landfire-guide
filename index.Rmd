@@ -54,7 +54,7 @@ In general the analyses developed here will help forest managers:
 * Assess site conditions that can be completed with existing datasets.
 * Assess climate change and future condition considerations where possible with existing data.
 
-In the United States, including the insular areas, [LANDFIRE](https://www.landfire.gov/) provides the datasets and ecological model results to get at these challenges and more. Here we walk you through some of the technical steps needed to start your analysis. We will do our work in a model landscape called the Ataya Forest Tract (hereafter referred to as "Ataya"). Ataya is managed by The Nature Conservancy (TNC) under FSC® standards (FSC®C008922) and is located in the Central Appalachians (highlighted in green in map below).
+In the United States, including the insular areas, [LANDFIRE](https://www.landfire.gov/) provides the datasets and ecological model results to get at these challenges and more. Here we walk you through some of the technical steps needed to start your analysis. We will do our work in a model landscape called the Ataya Forest Tract (hereafter referred to as "Ataya"). Ataya is managed by The Nature Conservancy (TNC) under FSC® standards (FSC-C008922) and is located in the Central Appalachians (highlighted in green in map below).
 
 To help you with the concepts we have worked through pre-processed LANDFIRE data for this example landscape. To prepare the datasets for your own landscape, you may download the relevant LANDFIRE data for your own landscape and follow our steps.
 

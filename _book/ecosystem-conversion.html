@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Ecosystem Conversion | LANDFIRE and Certified Sustainable Forest Management</title>
   <meta name="description" content="This is a TNC LANDFIRE GIS and excel tutorial to assist forest managers in FSC® audits" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Ecosystem Conversion | LANDFIRE and Certified Sustainable Forest Management" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Keith Phelps, Stacey Marion, and Randy Swaty" />
 
 
-<meta name="date" content="2022-12-06" />
+<meta name="date" content="2023-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,16 +52,16 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.1.2/leaflet.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<script src="libs/datatables-binding-0.27/datatables.js"></script>
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
@@ -233,8 +233,8 @@
 <li>Change the name of “Sum of Count” to “Percent”.</li>
 </ol>
 <p>Voila! We now have a table which should look similar to what’s below. For this tutorial, we have rounded our percents and are only displaying a portion of the table for better website viewing.</p>
-<div id="htmlwidget-136d53e9a67804698321" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-136d53e9a67804698321">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","South-Central Interior Mesophytic Forest-Historical","South-Central Interior Mesophytic Forest-Historical"],["Allegheny-Cumberland Dry Oak Forest and Woodland","Northern &amp; Central Native Ruderal Forest","South-Central Interior Mesophytic Forest","Southern Appalachian Oak Forest","Allegheny-Cumberland Dry Oak Forest and Woodland","Northern &amp; Central Native Ruderal Forest"],[57.08,13.55,10.35,19.01,28.72,12.5]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>BPS_NAME<\/th>\n      <th>EVT_NAME<\/th>\n      <th>PERCENT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"pageLength":5,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b659b962ccb3f64430f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4b659b962ccb3f64430f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","South-Central Interior Mesophytic Forest-Historical","South-Central Interior Mesophytic Forest-Historical"],["Allegheny-Cumberland Dry Oak Forest and Woodland","Northern &amp; Central Native Ruderal Forest","South-Central Interior Mesophytic Forest","Southern Appalachian Oak Forest","Allegheny-Cumberland Dry Oak Forest and Woodland","Northern &amp; Central Native Ruderal Forest"],[57.08,13.55,10.35,19.01,28.72,12.5]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>BPS_NAME<\/th>\n      <th>EVT_NAME<\/th>\n      <th>PERCENT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"pageLength":5,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
 </div>
 <div id="interpreting-the-ecosystem-conversion-table" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Interpreting the Ecosystem Conversion Table<a href="ecosystem-conversion.html#interpreting-the-ecosystem-conversion-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -249,8 +249,8 @@
 <div id="visual-exploration-with-a-sankey-diagram" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">8.6</span> Visual Exploration with a Sankey Diagram<a href="ecosystem-conversion.html#visual-exploration-with-a-sankey-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sometimes patterns emerge more explicitly from visuals. Below is a <a href="https://en.wikipedia.org/wiki/Sankey_diagram">Sankey Diagram</a> generated in R (which can also be created in Excel we hear. See instructions <a href="https://mychartguide.com/how-to-draw-sankey-diagram-in-excel/">here</a>). We used the data from our Conversion Table above to create this R figure. On the left are the historical ecosystems, on the right current ecosystems and flow bands. The width of the bands is proportional to the flow rate.</p>
-<div id="htmlwidget-85d3396b615b2c0c3863" style="width:960px;height:768px;" class="sankeyNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-85d3396b615b2c0c3863">{"x":{"links":{"source":[0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3],"target":[4,5,6,7,4,5,8,6,9,7,4,5,10,8,6,9,7,4,5,11,8,6,9,7],"value":[57.08,13.55,10.35,19.01,28.72,12.5,3.76,22.19,2.87,29.96,31.77,12.93,3.86,3.4,14.52,3.82,29.7,39.71,19.33,3.3,2.85,13.5,2.46,18.84]},"nodes":{"name":["Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","South-Central Interior Mesophytic Forest-Historical","Southern and Central Appalachian Cove Forest-Historical","Southern Appalachian Oak Forest-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland","Northern & Central Native Ruderal Forest","South-Central Interior Mesophytic Forest","Southern Appalachian Oak Forest","Recently Logged-Tree Cover","Southern and Central Appalachian Cove Forest","Northern & Central Ruderal Meadow","Recently Logged-Herb and Grass Cover"],"group":["Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","South-Central Interior Mesophytic Forest-Historical","Southern and Central Appalachian Cove Forest-Historical","Southern Appalachian Oak Forest-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland","Northern & Central Native Ruderal Forest","South-Central Interior Mesophytic Forest","Southern Appalachian Oak Forest","Recently Logged-Tree Cover","Southern and Central Appalachian Cove Forest","Northern & Central Ruderal Meadow","Recently Logged-Herb and Grass Cover"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":14,"fontFamily":null,"nodeWidth":15,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sankeyNetwork html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f56ff52e048c7508f21c" style="width:960px;height:768px;"></div>
+<script type="application/json" data-for="htmlwidget-f56ff52e048c7508f21c">{"x":{"links":{"source":[0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,3],"target":[4,5,6,7,4,5,8,6,9,7,4,5,10,8,6,9,7,4,5,11,8,6,9,7],"value":[57.08,13.55,10.35,19.01,28.72,12.5,3.76,22.19,2.87,29.96,31.77,12.93,3.86,3.4,14.52,3.82,29.7,39.71,19.33,3.3,2.85,13.5,2.46,18.84]},"nodes":{"name":["Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","South-Central Interior Mesophytic Forest-Historical","Southern and Central Appalachian Cove Forest-Historical","Southern Appalachian Oak Forest-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland","Northern & Central Native Ruderal Forest","South-Central Interior Mesophytic Forest","Southern Appalachian Oak Forest","Recently Logged-Tree Cover","Southern and Central Appalachian Cove Forest","Northern & Central Ruderal Meadow","Recently Logged-Herb and Grass Cover"],"group":["Allegheny-Cumberland Dry Oak Forest and Woodland-Historical","South-Central Interior Mesophytic Forest-Historical","Southern and Central Appalachian Cove Forest-Historical","Southern Appalachian Oak Forest-Historical","Allegheny-Cumberland Dry Oak Forest and Woodland","Northern & Central Native Ruderal Forest","South-Central Interior Mesophytic Forest","Southern Appalachian Oak Forest","Recently Logged-Tree Cover","Southern and Central Appalachian Cove Forest","Northern & Central Ruderal Meadow","Recently Logged-Herb and Grass Cover"]},"options":{"NodeID":"name","NodeGroup":"name","LinkGroup":null,"colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":14,"fontFamily":null,"nodeWidth":15,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":0,"sinksRight":false}},"evals":[],"jsHooks":[]}</script>
 
 </div>
 </div>
