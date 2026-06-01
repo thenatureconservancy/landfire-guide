@@ -80,7 +80,7 @@ knitr::include_graphics("KP_screenshots/LANDFIRE Find sClass.jpg")
 4. For output name, type "Ataya_combineClean" (or your preferred name).
 
 ```{r GIS19, echo=FALSE, out.width=500}
-knitr::include_graphics("04_gis_screenshots/19_table_table.png")
+knitr::include_graphics("Assets/19_table_table.png")
 
 ```
 
@@ -89,7 +89,7 @@ knitr::include_graphics("04_gis_screenshots/19_table_table.png")
 7. Navigate to an output folder location of your choosing. *Make sure to type ".xlsx" at the end of the file pathway. This will ensure your excel file is in the latest excel workbook format.*
 
 ```{r GIS20, echo=FALSE, out.width=500}
-knitr::include_graphics("04_gis_screenshots/20_Table_Excel.png")
+knitr::include_graphics("Assets/20_Table_Excel.png")
 
 ```
 
