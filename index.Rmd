@@ -108,7 +108,6 @@ leaflet(data = ataya) %>%
 
 ```
 
-=======
 
 ## Author Bios 
 
