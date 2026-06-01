@@ -210,6 +210,7 @@
 <div id="load-spatial-data" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Load Spatial Data<a href="gis-steps.html#load-spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Open ArcGIS Pro and create a new project using a blank map template. Move the downloaded Ataya shapefile tutorial data into your project folder.</p>
+<p><img src="Assets/1_load_data.PNG" /></p>
 <p><img src="04_gis_screenshots/1_load_data.png" width="1000pt" /></p>
 <p>Note that Pro creates a default geodatabase with the same name as your project. We recommend saving the Ataya shapefile to your geodatabase and hereafter, save intermediate layers to your geodatabase.</p>
 <p><strong>Consider your study area:</strong> Is it appropriate to end your analysis at the shapefile boundary? If you would like information to extend beyond the study boundary, consider creating a buffer. For our tutorial, we will limit our analysis to within the provided Ataya forest tract boundary.</p>
@@ -222,8 +223,7 @@
 <li>Use the <a href="https://www.landfire.gov/viewer/">LANDFIRE Data Distribution Site</a>. With this method you essentially select the datasets you need then draw a rectangle (or you can select state or counties) around your area of interest to start the downloader. We recommend this if your area of interest is not too large and/or you have a low number of landscapes and/or have storage limits. <em>Recommended for this tutorial.</em></li>
 <li>Download <a href="https://www.landfire.gov/version_comparison.php">Full Extent Mosaics</a> to obtain large files that cover the entire lower 48, AK or HI (depending on your selection). We use this method when we have several landscapes and/or a large area and no computer storage issues.</li>
 </ul>
-<p>For some LANDFIRE data products, like the BpS model, the model (spatial data) and descriptions are downloaded separately:
-* For BpS models and descriptions go to: <a href="http://landfirereview.org/search.php" class="uri">http://landfirereview.org/search.php</a>. Start by clicking on the “View map of LANDFIRE Map Zones”. This will help you narrow down your search. We recommend downloading descriptions for BpS models relevant to your study area.</p>
+<p>For some LANDFIRE data products, like the BpS model, the model (spatial data) and descriptions are downloaded separately: * For BpS models and descriptions go to: <a href="http://landfirereview.org/search.php" class="uri">http://landfirereview.org/search.php</a>. Start by clicking on the “View map of LANDFIRE Map Zones”. This will help you narrow down your search. We recommend downloading descriptions for BpS models relevant to your study area.</p>
 <p><img src="04_gis_screenshots/2_view_mapzone.png" width="1000pt" /></p>
 <p>Note that for this tutorial, we downloaded rasters by using the rectangle drawing tool and <em>drew a rectangle that was larger than our Study Area</em>. This ensures no raster cell data is lost in our calculations. This tutorial allows us to “cut” out that extra area in the end. If you are downloading your own data, always make sure to draw a downloading box that is larger than your Study Area to prevent GIS errors.</p>
 <p>Once downloaded, move the LANDFIRE data product downloads into your Pro project folder. You should have a BpS, EVT, and SCLASS folder. Each folder contains metadata, a corresponding database table, and a raster.</p>
@@ -234,8 +234,7 @@
 <p>The spatial reference of the Ataya tract shapefile is NAD83_StatePlane_VA_South_FIPS_4502_Feet Projected Coordinate System (Geographic Coordinate System NAD 1983).</p>
 <p><img src="04_gis_screenshots/4_crs_ataya.png" width="1000pt" /></p>
 <ol style="list-style-type: decimal">
-<li><p>LANDFIRE data (BpS, EVT, sClass rasters) was downloaded as “Best Fit UTM (NAD83 Datum)” so the Projected Coordinate System of the LANDFIRE rasters is NAD83_UTM_Zone_17N (Geographic Coordinate System was GCS_North American_1983).
-Given the size and location of our study area, we’ll use the Virginia State Plane (South) as our map coordinate system. <em>Note: unit is feet.</em></p></li>
+<li><p>LANDFIRE data (BpS, EVT, sClass rasters) was downloaded as “Best Fit UTM (NAD83 Datum)” so the Projected Coordinate System of the LANDFIRE rasters is NAD83_UTM_Zone_17N (Geographic Coordinate System was GCS_North American_1983). Given the size and location of our study area, we’ll use the Virginia State Plane (South) as our map coordinate system. <em>Note: unit is feet.</em></p></li>
 <li><p>Use the Project Raster tool to project each raster to the Virginia State Plane (South) coordinate system. Save the projected raster to the project geodatabase. <em>Since the datum is the same for State Plane and UTM, no “Geographic Transformation” was needed. Resampling technique was “Nearest Neighbor” which is preferred for categorical/discrete data. Output cell size was in feet (98.425ft. = 30m.)</em></p></li>
 </ol>
 <p><img src="04_gis_screenshots/5_raster_project.png" width="1000pt" /></p>
@@ -252,8 +251,7 @@ Given the size and location of our study area, we’ll use the Virginia State Pl
 <div id="landfire-data-stacking" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> LANDFIRE Data Stacking<a href="gis-steps.html#landfire-data-stacking" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The three used LANDFIRE data products (BpS, EVT, sClass) provide unique aspects of land cover information. Because each raster maintains the same 30 x 30 meter cell, we can stack the LANDFIRE rasters to gain information about each arbitrary pixel within our study area.</p>
-<p>Before we combine the rasters, take a look at the attribute table for each raster. Details on attributes can be found at landfire.gov
-Open the Combine tool. This tool can be found by running a search in geoprocessing or you can find it in the Spatial Analyst Toolbox. Run the combine tool using the (3) project LANDFIRE rasters: us_200bps_proj, us_200evt_proj, is_200sclass_proj. Output raster was labeled combine_landfire and saved within the project geodatabase.</p>
+<p>Before we combine the rasters, take a look at the attribute table for each raster. Details on attributes can be found at landfire.gov Open the Combine tool. This tool can be found by running a search in geoprocessing or you can find it in the Spatial Analyst Toolbox. Run the combine tool using the (3) project LANDFIRE rasters: us_200bps_proj, us_200evt_proj, is_200sclass_proj. Output raster was labeled combine_landfire and saved within the project geodatabase.</p>
 <p><img src="04_gis_screenshots/6_combine_rasters.png" width="1000pt" /></p>
 <p>Open the attribute table of the combine_landfire raster. You will notice that only the “Value” field was retained in the combine. Next we will perform joins to append tabular data to the combine_landfire raster.</p>
 <p><img src="04_gis_screenshots/7_combine_noattributes.png" width="1000pt" /></p>
@@ -300,8 +298,7 @@ Open the Combine tool. This tool can be found by running a search in geoprocessi
 <ol style="list-style-type: decimal">
 <li>Input Raster = combine_landfire</li>
 <li>Input Raster or Feature Mask Data = Ataya feature class</li>
-<li>Output raster = combine_studyArea
-<em>Reminder: if you decided to create a buffer around your study area, use the buffered study area feature class as your feature mask.</em></li>
+<li>Output raster = combine_studyArea <em>Reminder: if you decided to create a buffer around your study area, use the buffered study area feature class as your feature mask.</em></li>
 </ol>
 <p><img src="04_gis_screenshots/11_extract.png" width="1000pt" /></p>
 <p>The resultant “combine_studyArea raster” will only contain pixels within the Ataya study region:</p>
